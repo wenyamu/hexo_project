@@ -191,7 +191,7 @@ rm /home/hexo/.ssh/known_hosts
 # 新建 github.com 仓库名 wenyamu.github.io
 
 # 设置 ssh key
-ssh-keygen -t rsa -C "xxx@gmail.com" # -C github.com 注册邮箱
+ssh-keygen -t rsa -C "xxx@gmail.com" # -C github.com的注册邮箱
 # 默认生成公钥的位置
 #/home/hexo/.ssh/id_rsa.pub
 

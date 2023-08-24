@@ -43,7 +43,7 @@ git config --global user.name "yyy"
 ## 四，上传本地项目目录的文件
 ```shell
 # 新建项目说明文件（可选）
-echo "# node_demo" >> README.md
+echo "node 项目文件演示" >> README.md
 
 # 初始化本地项目，会在本地项目目录下新建 .git 文件夹（此文件夹是隐藏的）
 git init
@@ -71,14 +71,14 @@ git remote add node_test git@github.com:wenyamu/node_demo.git
 git push -u node_test master # master 是仓库的分支
 ```
 ## 总结
-> 当你修改完本地项目的文件后，要上传时，可以如下操作
+> 当你修改本地项目的后，上传可以简化命令
 ```shell
-# 提交修改后的文件，并为每个修改后的文件加上提交注释"ssl bugs xxx"
+# 提交并为每个修改后的文件加上提交注释"ssl bugs xxx"
 git commit -am "ssl bugs xxx"
 #[master df65159] ssl bugs xxx
-2 file changed, 2 insertion(+), 2 deletion(-)
+#2 file changed, 2 insertion(+), 2 deletion(-)
 
-# 上传上面修改过的文件
+# 上传修改过的文件
 git push
 
 ```

@@ -45,6 +45,9 @@ git add README.md #添加单个文件
 # 准备提交到仓库 -m "对目录或文件的更新日志"
 git commit -m "修改了文件中的小bug"
 
+# git add . && git commit -m "修改了文件中的小bug" 合并成一句命令，如下
+git commit -am  "修改了文件中的小bug"
+
 # 第一次上传项目时，为项目设置一个分支，不设置则默认是 master，这里定义的是 main 分支（可选）
 #git branch -M main
 
@@ -70,7 +73,7 @@ git commit -m "ssl bugs xxx"
 #[master df65159] ssl bugs xxx 2 file changed, 2 insertion(+), 2 deletion(-)
 
 # 会上传上面修改过的文件
-git push -u node_test master
+git push
 
 ```
 > debian

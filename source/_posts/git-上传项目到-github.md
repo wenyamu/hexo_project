@@ -73,17 +73,12 @@ git push -u node_test master # master 是仓库的分支
 ## 总结
 > 当你修改完本地项目的文件后，要上传时，可以如下操作
 ```shell
-# 会找出修改过的文件
-git add .
-#warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
-#warning: in the working copy of 'flasktest.py', LF will be replaced by CRLF the next time Git touches it
+# 提交修改后的文件，并为每个修改后的文件加上提交注释"ssl bugs xxx"
+git commit -am "ssl bugs xxx"
+#[master df65159] ssl bugs xxx
+2 file changed, 2 insertion(+), 2 deletion(-)
 
-# 会提交修改后的文件，并为每个修改后的文件加上"ssl bugs xxx"
-git commit -m "ssl bugs xxx"
-#[master df65159] ssl bugs xxx 2 file changed, 2 insertion(+), 2 deletion(-)
-
-# 会上传上面修改过的文件
+# 上传上面修改过的文件
 git push
 
 ```
-> debian

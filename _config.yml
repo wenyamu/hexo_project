@@ -1,0 +1,152 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# hexo-admin 使用用户:ljs 和 密码:ljsljs 登录
+admin:
+  #username: ljs
+  #password_hash: $2a$10$/CFpA2l/UkaHwCPfGus1JuLhZt4vJu1LDTppN39dEgayA0a0Yleqy
+  #secret: fdasf789$$%@%@$#
+  deployCommand: './hexo_deploy.sh'
+
+# Site
+title: Hexo
+subtitle: ''
+description: ''
+keywords:
+author: John Doe
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# URL
+## 设置你的站点域名, 如果你是使用 GitHub, 请设置成 'https://username.github.io/project'
+url: http://8.210.236.200:4000/ 
+
+### 注意：
+### url路径中的 title 参数指的是.md文件的文件名称 
+### 而文章的标题是.md文件中的 title 参数值。
+# mypath 参数值在文章.md文件中设置 
+# permalink: :mypath/:title.html 
+
+# abbrlink 参数值在文章md文件中自动生成，需要安装 hexo-abbrlink
+permalink: p/:abbrlink.html # 在 public/p/ 生成html, 例如：xxyyzz.html
+abbrlink:
+  #hexo-abbrlink2 设置
+  #start: 1000 # the first id, default 0
+  #hexo-abbrlink 设置
+  alg: crc32   #算法： crc16(default) and crc32(推荐)
+  rep: hex     #进制： dec(default) and hex(推荐)
+permalink_defaults:
+# url 链接中是否带 'index.html' 和 '.html'
+pretty_urls:
+  trailing_index: true # 开启 index.html 后缀
+  trailing_html: true # 开启 .html 后缀
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render: # 跳过指定文件的渲染，您可使用 glob 表达式来匹配路径
+
+# Writing
+new_post_name: :title.md # 新文章的文件名称
+default_layout: post # 预设布局
+titlecase: false # 把英文标题，转换成每个单词首字母大写（需要安装插件）
+external_link:
+  enable: true # 在新标签页打开外部链接
+  field: site # 适用于整个网站
+  exclude: ''
+filename_case: 0 #把文件名称转换为 (1 小写)或 (2 大写)
+render_drafts: false # 渲染草稿
+#是否开启资源文件管理功能，打开后Hexo将会在你每一次通过命令创建新文章时自动创建一个资源文件夹，与这个文章文件一样的名字。
+post_asset_folder: false
+relative_link: false # 把链接改为与根目录的相对位址
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false # 不能打开，代码中的空格会异常，不会对齐
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: stun
+search:
+  path: search.json
+  field: post
+  content: true
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+## 执行 hexo d 发布public目录下的静态文件到nginx服务器
+## 必须是ssh免密登陆
+
+deploy:
+# 可以设置多个部署，这是第一个
+# - type: rsync                 # 发布方式
+  # host: 45.77.216.93          # ssh服务器ip
+  # user: root                  # ssh登陆用户名
+  # root: /root/hexo            # nginx的静态文件目录(没有会自动创建)
+  # port: 22                    # ssh登陆端口
+  # delete: true                # public目录下没有，而远程服务器上有的文件，则被删除
+  # progress: true              # 显示rsync进展
+  # args: ""                    # rsync 参数
+  # rsh: ""                     # 指定要使用的远程shell
+  # key: ""                     # 定制的SSH私有密钥
+  # verbose: false              # 是否显示文件上传详细信息
+  # ignore_errors: false        # 是否忽略错误提示
+  # create_before_update: false # 首先创建不存在的文件,然后更新现有的文件
+- type: git
+  repo: git@github.com:wenyamu/wenyamu.github.io.git
+  branch: master
+  

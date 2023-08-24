@@ -5,15 +5,25 @@ categories: []
 abbrlink: 720a2000
 date: 2023-08-22 12:58:00
 ---
-> windows
+> windows 和 debian 安装方法
+<!-- more -->
+<!-- toc -->
+## 一、安装 git
+### windows10
+> 下载地址
 
-## 一、安装 git windows版
 http://git-scm.com/download/
+> 使用方法
 
-## 二，打开终端
-在本地项目目录下空白处右键-"Open Git Bash here"
+在本地项目目录的空白处右键-"Open Git Bash here"
 
-## 三，为Github账户设置SSH key
+### debian11
+```shell
+apt update
+apt -y install git
+```
+
+## 二，为Github账户设置SSH key
 ```shell
 # 在终端生成公钥 id_rsa.pub（直接3次回车）
 ssh-keygen -t rsa -C "xxx@gmail.com" # -C github.com 注册邮箱
@@ -25,12 +35,12 @@ ssh-keygen -t rsa -C "xxx@gmail.com" # -C github.com 注册邮箱
 #类型 选择 Authentication Key
 #标题 随便写一个
 ```
-## 四、全局部署 GitHub 用户名和邮箱，让 GitHub 知道你是谁。
+## 三、全局部署 GitHub 用户名和邮箱，让 GitHub 知道你是谁。
 ```shell
 git config --global user.email "xxx@gmail.com"
 git config --global user.name "yyy"
 ```
-## 五，上传本地项目目录的文件
+## 四，上传本地项目目录的文件
 ```shell
 # 新建项目说明文件（可选）
 echo "# node_demo" >> README.md

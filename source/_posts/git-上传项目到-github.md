@@ -40,18 +40,23 @@ ssh-keygen -t rsa -C "xxx@gmail.com" # -C github.com 注册邮箱
 git config --global user.email "xxx@gmail.com"
 git config --global user.name "yyy"
 ```
-## 四，上传本地项目目录的文件
-### 新项目上传
+## 四，上传本地项目
+### 1、第一次上传新项目
+> 适用于：本地项目第一次上传。在"project"下执行 git 命令，目录结构如下：
+```
+/project
+-- 项目文件1
+-- 项目目录1
+---- 项目文件2
+```
 ```shell
-# 新建项目说明文件（可选）
-echo "node 项目文件演示" >> README.md
-
 # 初始化本地项目，会在本地项目目录下新建 .git 文件夹（此文件夹是隐藏的）
 git init
 
 # 准备添加到仓库的文件
-git add . #添加文件夹内所有文件
-git add README.md #添加单个文件
+git add . #添加project目录内所有文件
+git add 项目目录1/ #添加项目目录1内所有文件
+git add README.md #添加project目录中单个文件
 
 # 准备提交到仓库 -m "对目录或文件的更新日志"
 git commit -m "修改了文件中的小bug"
@@ -68,7 +73,15 @@ git remote add node_test git@github.com:wenyamu/node_demo.git
 # 上传代码到GitHub仓库
 git push -u node_test master # master 是仓库的分支
 ```
-### 项目添加文件夹
+### 2、为远程项目新增内容
+> 适用于：本地项目已经被删除时。在"新建文件夹"下执行 git 命令，目录结构如下：
+```
+/新建文件夹
+-- 要新增的文件1
+-- 要新增的目录1
+---- 要新增的文件2
+```
+
 ```shell
 # 先初始化
 git init

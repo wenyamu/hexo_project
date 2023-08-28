@@ -41,6 +41,7 @@ git config --global user.email "xxx@gmail.com"
 git config --global user.name "yyy"
 ```
 ## 四，上传本地项目目录的文件
+### 新项目上传
 ```shell
 # 新建项目说明文件（可选）
 echo "node 项目文件演示" >> README.md
@@ -55,9 +56,6 @@ git add README.md #添加单个文件
 # 准备提交到仓库 -m "对目录或文件的更新日志"
 git commit -m "修改了文件中的小bug"
 
-# git add . && git commit -m "修改了文件中的小bug" 合并成一句命令，如下
-git commit -am  "修改了文件中的小bug"
-
 # 第一次上传项目时，为项目设置一个分支，不设置则默认是 master，这里定义的是 main 分支（可选）
 #git branch -M main
 
@@ -70,11 +68,26 @@ git remote add node_test git@github.com:wenyamu/node_demo.git
 # 上传代码到GitHub仓库
 git push -u node_test master # master 是仓库的分支
 ```
+### 项目添加文件夹
+```shell
+# 先初始化
+git init
+# 为仓库创建别名
+git remote add node_test git@github.com:wenyamu/node_demo.git
+# 拉取仓库数据
+git pull node_test master
+git add .
+git commit -m "add"
+git push -u node_test master
+```
+
 ## 总结
 > 当你修改本地项目的后，上传可以简化命令
 ```shell
+git add .
+
 # 提交并为每个修改后的文件加上提交注释"ssl bugs xxx"
-git commit -am "ssl bugs xxx"
+git commit -m "ssl bugs xxx"
 #[master df65159] ssl bugs xxx
 #2 file changed, 2 insertion(+), 2 deletion(-)
 

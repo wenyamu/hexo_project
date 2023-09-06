@@ -108,3 +108,6 @@ git commit -m "ssl bugs xxx"
 git push
 
 ```
+此外，你还可以通过执行 git config 命令来永久指定默认的处理方式，比如：
+
+git config --global pull.rebase true  # 设置默认使用 rebase 方式合并

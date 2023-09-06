@@ -89,6 +89,7 @@ git init
 # 为仓库创建别名
 git remote add node_test git@github.com:wenyamu/node_demo.git
 # 拉取仓库数据
+# 文章底部有关于 pull 3种方式
 git pull node_test master
 git add .
 git commit -m "add"
@@ -109,9 +110,13 @@ git commit -m "ssl bugs xxx"
 git push
 
 ```
-> pull 3种方式
-```shell
+## pull 方式区别
 
+> merge 是一个合并操作，将两个分支的修改合并在一起，会提交合并中修改的内容。
+
+> rebase 并没有进行合并操作，只是提取了当前分支的修改。rebase 操作会丢弃当前分支已提交的 commit，不要在有协作开发的分支上执行 rebase 操作。
+
+```shell
 # 在每次执行 git pull 命令之前运行一次
 git config pull.rebase false  # merge
 git config pull.rebase true   # rebase

@@ -120,9 +120,17 @@ git push
 # 在每次执行 git pull 命令之前运行一次
 git config pull.rebase false  # merge
 git config pull.rebase true   # rebase
-git config pull.ff only       # fast-forward only
+# 然后再执行 git pull 命令
+git pull node_test master
 
-当然，你还可以通过执行 git config 命令来永久指定默认的处理方式，比如：
+# 也可以直接
+git pull -r node_test master
+# 或者
+git pull --rebase node_test master
+
+# 当然，你还可以通过执行 git config --global 命令来永久指定默认的处理方式，比如：
 git config --global pull.rebase true  # 设置默认使用 rebase 方式
+# 以后直接
+git pull node_test master
 
 ```

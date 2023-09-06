@@ -68,6 +68,7 @@ git commit -m "修改了文件中的小bug"
 git remote add node_test git@github.com:wenyamu/node_demo.git
 
 # 如果你是修改代码后上传到仓库，这一步是标准操作，也是个好习惯（如果是新创建的仓库，可以省略）
+# 文章底部有关于 pull 3种方式
 #git pull node_test master # master 是仓库的分支
 
 # 上传代码到GitHub仓库
@@ -108,6 +109,15 @@ git commit -m "ssl bugs xxx"
 git push
 
 ```
-此外，你还可以通过执行 git config 命令来永久指定默认的处理方式，比如：
+> pull 3种方式
+```shell
 
-git config --global pull.rebase true  # 设置默认使用 rebase 方式合并
+# 在每次执行 git pull 命令之前运行一次
+git config pull.rebase false  # merge
+git config pull.rebase true   # rebase
+git config pull.ff only       # fast-forward only
+
+当然，你还可以通过执行 git config 命令来永久指定默认的处理方式，比如：
+git config --global pull.rebase true  # 设置默认使用 rebase 方式
+
+```
